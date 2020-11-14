@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "DoneWithIt",
-    "slug": "DoneWithIt",
+    "name": "Sellit",
+    "slug": "sell-it",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./app/assets/icon.png",
@@ -13,7 +13,9 @@
     "updates": {
       "fallbackToCacheTimeout": 0
     },
-    "assetBundlePatterns": ["**/*"],
+    "assetBundlePatterns": [
+      "**/*"
+    ],
     "ios": {
       "supportsTablet": true
     },
@@ -24,9 +26,10 @@
       "package": "com.codewithmosh.donewithit",
       "versionCode": 1
     },
-    "description": "A marketplace for selling the stuff you don't need anymore.",
+    "description": "E-Store to sell goods",
     "notification": {
       "iosDisplayInForeground": true
-    }
+    },
+    "githubUrl": "https://github.com/anurag-deore/doneWithIt-ReactNative-App.git"
   }
 }

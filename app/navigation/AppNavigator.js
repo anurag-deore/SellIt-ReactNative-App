@@ -16,13 +16,18 @@ const AppNavigator = () => {
   useNotifications();
 
   return (
-    <Tab.Navigator>
+    <Tab.Navigator
+      tabBarOptions={{
+        style: { height: 55 },
+        labelStyle: { textTransform: "none", fontSize: 15 },
+      }}
+    >
       <Tab.Screen
         name="Feed"
         component={FeedNavigator}
         options={{
           tabBarIcon: ({ color, size }) => (
-            <MaterialCommunityIcons name="home" color={color} size={size} />
+            <MaterialCommunityIcons name="home" color={color} size={30} />
           ),
         }}
       />
@@ -49,7 +54,7 @@ const AppNavigator = () => {
         component={AccountNavigator}
         options={{
           tabBarIcon: ({ color, size }) => (
-            <MaterialCommunityIcons name="account" color={color} size={size} />
+            <MaterialCommunityIcons name="account" color={color} size={30} />
           ),
         }}
       />

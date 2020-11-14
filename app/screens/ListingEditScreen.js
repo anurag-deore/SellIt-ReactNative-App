@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { StyleSheet } from "react-native";
+import { View, StyleSheet, Text } from "react-native";
 import * as Yup from "yup";
 
 import {
@@ -102,56 +102,82 @@ function ListingEditScreen() {
   };
 
   return (
-    <Screen style={styles.container}>
-      <UploadScreen
-        onDone={() => setUploadVisible(false)}
-        progress={progress}
-        visible={uploadVisible}
-      />
-      <Form
-        initialValues={{
-          title: "",
-          price: "",
-          description: "",
-          category: null,
-          images: [],
+    <>
+      <View
+        style={{
+          left: 0,
+          width: "100%",
+          padding:15,
+          paddingTop:50,
+          position: "absolute",
+          marginBottom: 50,
+          backgroundColor: "white",
+          shadowColor: "#000",
+          shadowOffset: { width: 0, height: 1 },
+          shadowOpacity: 1,
+          shadowRadius: 5,
+          elevation: 5,
         }}
-        onSubmit={handleSubmit}
-        validationSchema={validationSchema}
-      >
-        <FormImagePicker name="images" />
-        <FormField maxLength={255} name="title" placeholder="Title" />
-        <FormField
-          keyboardType="numeric"
-          maxLength={8}
-          name="price"
-          placeholder="Price"
-          width={120}
-        />
-        <Picker
-          items={categories}
-          name="category"
-          numberOfColumns={3}
-          PickerItemComponent={CategoryPickerItem}
-          placeholder="Category"
-          width="50%"
-        />
-        <FormField
-          maxLength={255}
-          multiline
-          name="description"
-          numberOfLines={3}
-          placeholder="Description"
-        />
-        <SubmitButton title="Post" />
-      </Form>
-    </Screen>
+        >
+        <Text style={{
+        fontSize:18,
+
+        }}>Add New Listing</Text>
+      </View>
+      <Screen>
+        <View style={styles.container}>
+          <UploadScreen
+            onDone={() => setUploadVisible(false)}
+            progress={progress}
+            visible={uploadVisible}
+          />
+          <Form
+            initialValues={{
+              title: "",
+              price: "",
+              description: "",
+              category: null,
+              images: [],
+            }}
+            onSubmit={handleSubmit}
+            validationSchema={validationSchema}
+          >
+            <FormImagePicker name="images" />
+            <FormField maxLength={255} name="title" placeholder="Title" />
+            <FormField
+              keyboardType="numeric"
+              maxLength={8}
+              name="price"
+              placeholder="Price"
+              width={120}
+            />
+            <Picker
+              items={categories}
+              name="category"
+              numberOfColumns={3}
+              PickerItemComponent={CategoryPickerItem}
+              placeholder="Category"
+              width="50%"
+            />
+            <FormField
+              maxLength={255}
+              multiline
+              name="description"
+              numberOfLines={3}
+              placeholder="Description"
+            />
+            <SubmitButton title="Post" />
+          </Form>
+        </View>
+      </Screen>
+    </>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    padding: 10,
+    padding: 20,
+    paddingTop: 60,
   },
 });
 export default ListingEditScreen;
