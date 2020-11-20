@@ -23,7 +23,7 @@
       "favicon": "./assets/favicon.png"
     },
     "android": {
-      "package": "com.codewithmosh.donewithit",
+      "package": "com.anurag.sellit",
       "versionCode": 1
     },
     "description": "E-Store to sell goods",
